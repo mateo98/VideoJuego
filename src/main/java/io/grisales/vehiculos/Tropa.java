@@ -1,5 +1,6 @@
 package io.grisales.vehiculos;
 
+import io.grisales.vehiculos.Aire.Bombardero;
 import io.grisales.vehiculos.interfaces.*;
 
 import java.util.ArrayList;
@@ -63,5 +64,27 @@ public class Tropa {
             return true;
         }
         return false;
+    }
+
+    public boolean atacarBombarderos(){
+        int conteo =  0;
+        for (Discrecionable vh:vhDiscrecionable){
+            try{
+                vh.soltarBombas();
+            }catch (SinMunicionException e){
+                System.out.println(e.getMessage());
+            }finally {
+                conteo++;
+            }
+        }
+        if(conteo == vhDiscrecionable.size()){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean agregarBombardero(Bombardero vehiculo){
+        vhDiscrecionable.add(vehiculo);
+        return true;
     }
 }
