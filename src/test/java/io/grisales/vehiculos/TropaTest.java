@@ -31,4 +31,16 @@ public class TropaTest {
     public void getTotalCapacidadPersonas() {
         Assert.assertEquals("no es el mismo resultado", 0, equipo.getTotalCapacidadPersonas());
     }
+
+    @Test
+    public void sumarCapacidadToneladas() {
+        equipo.agregarVehiculo(m4);
+        Assert.assertEquals("No es el mismo Resultado", 1,  equipo.sumarCapacidadToneladas(),0);
+
+    }
+
+    @Test
+    public void getTotalCapacidadToneladas() {
+        Assert.assertEquals("no es el mismo resultado", 0, equipo.getTotalCapacidadToneladas(),0);
+    }
 }

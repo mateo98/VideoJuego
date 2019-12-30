@@ -10,6 +10,7 @@ public class Tropa {
     private ArrayList<Rafagable> vhRafagable = new ArrayList<Rafagable>();
     private ArrayList<Discrecionable> vhDiscrecionable = new ArrayList<Discrecionable>();
     private int totalCapacidadPersonas = 0;
+    private double totalCapacidadToneladas = 0;
 
     public Tropa(){}
 
@@ -22,11 +23,21 @@ public class Tropa {
         for(Vehiculo vehiculo:vehiculos){
             totalCapacidadPersonas += vehiculo.getCapacidadPersonas();
         }
-
         return totalCapacidadPersonas;
     }
 
     public int getTotalCapacidadPersonas() {
         return totalCapacidadPersonas;
+    }
+
+    public double sumarCapacidadToneladas(){
+        for(Vehiculo vehiculo:vehiculos){
+            totalCapacidadToneladas += vehiculo.getCapacidadTonalaje();
+        }
+        return totalCapacidadToneladas;
+    }
+
+    public double getTotalCapacidadToneladas() {
+        return totalCapacidadToneladas;
     }
 }
