@@ -83,4 +83,11 @@ public class TropaTest {
         equipo.agregarDirigible(alabama);
         Assert.assertTrue(equipo.atacarDirigible());
     }
+
+    @Test
+    public void ataqueRafagaBomba() {
+        equipo.agregarBombardero(b56);
+        equipo.agregarRafaga(m4);
+        Assert.assertTrue(equipo.ataqueRafagaBomba());
+    }
 }

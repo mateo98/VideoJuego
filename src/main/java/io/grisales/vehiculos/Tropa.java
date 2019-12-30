@@ -113,5 +113,10 @@ public class Tropa {
         return false;
     }
 
-
+    public boolean ataqueRafagaBomba(){
+        if(atacarBombarderos() && atacarRafaga()){
+            return true;
+        }
+        return false;
+    }
 }
