@@ -42,4 +42,26 @@ public class Tropa {
         return totalCapacidadToneladas;
     }
 
+    public boolean agregarRafaga(Rafagable vehiculo){
+        vhRafagable.add(vehiculo);
+        return true;
+    }
+
+    public boolean atacarRafaga(){;
+        int conteo = 0;
+        for(Rafagable vh:vhRafagable){
+            try{
+            vh.dispararAmetralladora();
+            }catch (SinMunicionException e){
+                System.out.println(e.getMessage());
+            }finally {
+                conteo++;
+            }
+
+        }
+        if(conteo == vhRafagable.size()){
+            return true;
+        }
+        return false;
+    }
 }
