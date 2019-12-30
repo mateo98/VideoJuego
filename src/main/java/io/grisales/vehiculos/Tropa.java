@@ -87,4 +87,31 @@ public class Tropa {
         vhDiscrecionable.add(vehiculo);
         return true;
     }
+
+    public boolean agregarDirigible(Dirigible vehiculo){
+        vhDirigible.add(vehiculo);
+        return true;
+    }
+
+    public boolean atacarDirigible(){
+        int conteo =  0;
+        int coordenadax=0, coordenadaY=0;
+        for (Dirigible vh: vhDirigible){
+            try{
+                vh.dispararMisil(coordenadax,coordenadaY);
+                coordenadax++;
+                coordenadaY++;
+            }catch (SinMunicionException e){
+                System.out.println(e.getMessage());
+            }finally {
+                conteo++;
+            }
+        }
+        if(conteo == vhDirigible.size()){
+            return true;
+        }
+        return false;
+    }
+
+
 }

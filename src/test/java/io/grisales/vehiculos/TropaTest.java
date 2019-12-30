@@ -1,6 +1,7 @@
 package io.grisales.vehiculos;
 
 import io.grisales.vehiculos.Aire.Bombardero;
+import io.grisales.vehiculos.agua.Crucero;
 import io.grisales.vehiculos.tierra.Tanque;
 import org.junit.Assert;
 import org.junit.Before;
@@ -12,11 +13,14 @@ public class TropaTest {
     private Tropa equipo;
     private Tanque m4;
     private Bombardero b56;
+    private Crucero alabama;
     @Before
     public void setUp() throws Exception {
         equipo = new Tropa();
         m4 = new Tanque(1,1,1, "m4");
         b56 = new Bombardero(5,2,20,"B56");
+        alabama = new Crucero(1,1,1, "Alabama");
+
     }
 
     @Test
@@ -67,5 +71,16 @@ public class TropaTest {
     @Test
     public void agregarBombardero() {
         Assert.assertTrue(equipo.agregarBombardero(b56));
+    }
+
+    @Test
+    public void agregarDirgible() {
+        equipo.agregarDirigible(alabama);
+    }
+
+    @Test
+    public void atacarDirigible() {
+        equipo.agregarDirigible(alabama);
+        Assert.assertTrue(equipo.atacarDirigible());
     }
 }
