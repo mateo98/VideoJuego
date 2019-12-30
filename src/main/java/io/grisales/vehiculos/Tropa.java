@@ -16,6 +16,7 @@ public class Tropa {
 
     public boolean agregarVehiculo(Vehiculo vehiculo){
         vehiculos.add(vehiculo);
+
         return true;
     }
 
@@ -40,4 +41,5 @@ public class Tropa {
     public double getTotalCapacidadToneladas() {
         return totalCapacidadToneladas;
     }
+
 }

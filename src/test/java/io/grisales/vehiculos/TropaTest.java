@@ -43,4 +43,6 @@ public class TropaTest {
     public void getTotalCapacidadToneladas() {
         Assert.assertEquals("no es el mismo resultado", 0, equipo.getTotalCapacidadToneladas(),0);
     }
+
+
 }
